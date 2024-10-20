@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black; /* Updated background color */
+    color: white; /* Updated text color */
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent; /* Updated background color for the header */
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b; /* Updated logo color */
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.7s ease, box-shadow 0.7s ease; /* Add box-shadow transition */
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(-370deg); /* Scale and slightly rotate on hover */
+    box-shadow: 0 0 20px #b74b4b, 0 0 40px #b74b4b; /* Glowing effect */
+}
+
+
+
+nav a {
+    font-size: 1.8rem;
+    color: white; /* Updated text color for navbar links */
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b; /* Updated hover and active color */
+    border-bottom: 3px solid #b74b4b;
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    background-color: black; /* Section background color matches body */
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black; /* Updated section background */
+}
+
+.home .home-content h1 {
+    margin-top: 4rem;
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: white; /* Updated primary text color */
+}
+
+span {
+    margin-left: 1rem;
+    color: #b74b4b; /* Updated span text color */
+}
+
+.home-content h3 {
+    font-size: 5rem;
+    margin-bottom: 5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.home-content p {
+    font-size: 1.9rem;
+    color: white;
+}
+
+.home-img {
+    perspective: 1000px; /* Establish a 3D perspective */
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Base shadow for depth */
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease; /* Smooth transition */
+}
+
+.home-img img:hover {
+    transform: translateZ(20px) rotateY(5deg) rotateX(5deg); /* 3D transformation */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8); /* Enhanced shadow for 3D effect */
+    filter: brightness(1.1); /* Slight brightness increase for emphasis */
+}
+
+/* Optional overlay for a refined look */
+.home-img img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(183, 75, 75, 0.3); /* Semi-transparent overlay */
+    border-radius: 50%; /* Match the image shape */
+    transition: opacity 0.4s ease; /* Smooth overlay transition */
+    opacity: 1; /* Full opacity on hover */
+}
+
+.home-img img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%; /* Match the image shape */
+    background-color: transparent; /* Initial state */
+    transition: opacity 0.4s ease; /* Smooth overlay transition */
+    opacity: 0; /* No overlay initially */
+}
+
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid #b74b4b; /* Updated border color */
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+    color: #b74b4b; /* Updated icon color */
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #b74b4b; /* Updated hover background color */
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black; /* Updated button background color */
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #b74b4b; /* Button text color */
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #b74b4b;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale3d(1.03);
+    background-color: #b74b4b; /* Updated hover background */
+    color: black; /* Updated hover text color */
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    color: white;
+}
+
+.typing-text span {
+    position: absolute;
+}
+
+.typing-text span::before {
+    content: "Student";
+    color: #b74b4b; /* Typing effect color */
+    animation: words 8s infinite;
+}
+
+.typing-text span::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: auto;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #b74b4b; /* Updated cursor color */
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Student";
+    }
+    21%, 40% {
+        content: "Frontend Developer";
+    }
+    41%, 60% {
+        content: "Web Designer";
+    }
+    61%, 80% {
+        content: "Web Developer";
+    }
+    81%, 100% {
+        content: "App Developer";
+    }
+}
+
+.custom-link {
+    color: white; /* Default link color */
+}
+
+.custom-link:hover {
+    color: #b74b4b; /* Change to primary color on hover */
+}
+
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .home-content h1 {
+        font-size: 4rem;
+    }
+
+    .home-content h3 {
+        font-size: 2.5rem;
+    }
+
+    .home-img img {
+        width: 50vw;
+        margin-top: 3rem;
+    }
+
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-content h1 {
+        font-size: 3rem;
+    }
+
+    .home-content h3 {
+        font-size: 2rem;
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+}
